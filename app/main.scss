@@ -32,6 +32,16 @@ $font-size-title: 36px;
 $button-fontsize: 20px;
 
 
+// transition klassen
+
+.haken:after {
+    content:"✔";
+}
+
+
+
+// -----------------------
+
 body	{
 	margin: 0;
 	background: white;
@@ -40,6 +50,9 @@ body	{
 
 
 h1 {
+	width:100%;
+	z-index:100;
+	position:fixed;
 	font-size:$font-size-title;
 	height: 70px;
 	margin-top: 0;
@@ -53,22 +66,23 @@ h1 {
 
 
 .list {
-    position:relative; 
-    color:#555;
-    font-size:$font-size-text;
-    padding:20px 0;
-    width:100%;
+    position: relative; 
+    color: #555;
+    font-size: $font-size-text;
+    padding: 100px 0;
+    width: 100%;
 	li {
-	    position:relative; 
-	    list-style:none;
-	    height:auto;
-	    padding:10px 40px 10px 10px;
-	    border-bottom:1px dotted #ccc;
-	    cursor:pointer;
+	    position: relative; 
+	    list-style: none;
+	    height: auto;
+	    padding: 10px 40px 10px 10px;
+	    border-bottom: 1px dotted #ccc;
+	    cursor: pointer;
 	    overflow: hidden;
 	    text-overflow: ellipsis;
-	    height: 50px;
-	    transition: height 2s;
+	    height: 35px;
+	    transition: height 1s;
+	    transition: padding 1s;
 	    &:nth-child(odd){
 			background: #F0F0F0;
 		}
@@ -79,15 +93,11 @@ h1 {
 		    top:10px;
 		    left:12px;
 		}
-		&:hover {
-			height: 100px;
+		&.animate {
+		height: 56px;
+		padding: 20px 40px 10px 10px;
 		}
 	}
-}
-
-
-.haken:after {
-    content:"✔";
 }
 
 
