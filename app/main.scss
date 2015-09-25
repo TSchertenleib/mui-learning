@@ -22,12 +22,14 @@ $header-background: lightblue;
 
 $header-font-color: white;
 
+$button-background: #464646;
+$button-background-hover: #262626;
 
 // Typografie
 $font-stack:    Helvetica, sans-serif;
 $font-size-text: 16px;
 $font-size-title: 36px;
-
+$button-fontsize: 20px;
 
 
 body	{
@@ -65,6 +67,8 @@ h1 {
 	    cursor:pointer;
 	    overflow: hidden;
 	    text-overflow: ellipsis;
+	    height: 50px;
+	    transition: height 2s;
 	    &:nth-child(odd){
 			background: #F0F0F0;
 		}
@@ -74,6 +78,9 @@ h1 {
 		    color:red;
 		    top:10px;
 		    left:12px;
+		}
+		&:hover {
+			height: 100px;
 		}
 	}
 }
@@ -88,28 +95,29 @@ h1 {
 .button {
 	margin:auto;
     display:block;
-    width:80px;
-    height:80px;
-    line-height:50px;
+    width: 80px;
+    height: 80px;
+    line-height: 50px;
     border: 2px solid #f5f5f5;
     border-radius: 50%;
-    color:white;
-    text-align:center;
+    color: white;
+    text-align: center;
     text-decoration:none;
-    background: #464646;
-    font-size:20px;
-    font-weight:bold;
+    background: $button-background;
+    font-size: $button-fontsize;
+    font-weight: bold;
  	padding-top: 11px;
+ 	transition: background 1s;
  	&:hover {
-    background: #262626;
+    background: $button-background-hover;
 	}
 }
 
 
 
 textarea {
-	font-family: $font-size-text;
-	font-size: 16px;
+	font-family: $font-stack;
+	font-size: $font-size-text;
 	width: 98%;
     display: table;
     margin: 0 auto 50px;
