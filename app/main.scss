@@ -16,54 +16,68 @@
 }
 
 
+
+// Colors
+$header-background: lightblue;
+
+$header-font-color: white;
+
+
+// Typografie
+$font-stack:    Helvetica, sans-serif;
+$font-size-text: 16px;
+$font-size-title: 36px;
+
+
+
 body	{
 	margin: 0;
 	background: white;
-	font-family: 'source sans pro', 'Helvetica', sans-serif;
+    font: 100% $font-stack;
 }
 
+
 h1 {
+	font-size:$font-size-title;
 	height: 70px;
 	margin-top: 0;
-	color:white;
-	background: lightblue; 
+	color: $header-font-color;
+	background: $header-background; 
 	text-align: center;
 	font-weight: 400;
 	padding-top: 13px;
 	box-shadow: 1px 3px;
 }
 
+
 .list {
     position:relative; 
     color:#555;
-    font-size:16px;
+    font-size:$font-size-text;
     padding:20px 0;
     width:100%;
+	li {
+	    position:relative; 
+	    list-style:none;
+	    height:auto;
+	    padding:10px 40px 10px 10px;
+	    border-bottom:1px dotted #ccc;
+	    cursor:pointer;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    &:nth-child(odd){
+			background: #F0F0F0;
+		}
+		&:after {
+			display:block;
+			float:right;
+		    color:red;
+		    top:10px;
+		    left:12px;
+		}
+	}
 }
 
-.list li:nth-child(odd){
-	background: #F0F0F0;
-}
-
-.list li {
-    position:relative; 
-    list-style:none;
-    height:auto;
-    padding:10px 40px 10px 10px;
-    border-bottom:1px dotted #ccc;
-    cursor:pointer;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-
-.list li:after {
-	display:block;
-	float:right;
-    color:red;
-    top:10px;
-    left:12px;
-}
 
 .haken:after {
     content:"✔";
@@ -86,14 +100,15 @@ h1 {
     font-size:20px;
     font-weight:bold;
  	padding-top: 11px;
+ 	&:hover {
+    background: #262626;
+	}
 }
 
-.button:hover {
-    background: #262626;
-}
+
 
 textarea {
-	font-family: 'source sans pro', 'Helvetica', sans-serif;
+	font-family: $font-size-text;
 	font-size: 16px;
 	width: 98%;
     display: table;
